@@ -1,0 +1,5 @@
+category: Gnome Mail
+requires: cygwin bogofilter evolution-data-server gstreamer0.10-plugins-base gstreamer0.10-plugins-gconf gstreamer0.10-plugins-good gstreamer0.10-plugins-oss libart_lgpl_2_2 libatk1.0_0 libbonobo2_0 libbonoboui2_0 libcairo2 libcamel1.2_14 libdbus-glib_1_2 libdbus1_3 libebackend1.2_0 libebook1.2_9 libecal1.2_7 libedataserver1.2_11 libedataserverui1.2_8 libegroupwise1.2_13 libexchange-storage1.2_3 libgcc1 libgconf2_4 libgdata-google1.2_1 libgdata1.2_1 libgdk_pixbuf2.0_0 libglade2.0_0 libglib2.0_0 libgnome2_0 libgnomecanvas2_0 libgnomeui2_0 libgstreamer0.10_0 libgtk2.0_0 libgtkhtml-editor0 libgtkhtml3.14_19 libgweather1 libical0 libiconv2 libintl8 libnotify1 libORBit2_0 libpango1.0_0 libsoup2.4_1 libX11_6 libxml2 libytnef0 procps python
+sdesc: "GNOME groupware suite"
+ldesc: "Evolution provides integrated mail, addressbook and calendaring 
+functionality to users of the GNOME desktop."

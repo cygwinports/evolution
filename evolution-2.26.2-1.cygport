@@ -1,0 +1,49 @@
+inherit gnome2
+
+DESCRIPTION="GNOME groupware suite"
+HOMEPAGE="http://projects.gnome.org/evolution/"
+
+PATCH_URI="
+	2.26-configure.patch
+	2.26-dolt.patch
+	2.26-library-prefix.patch
+	2.26-no-undefined.patch
+"
+
+PKG_NAMES="${PN} ${PN}-devel"
+PKG_HINTS="setup devel"
+evolution_CONTENTS="--exclude=idl etc/ usr/bin/ usr/lib/bonobo/
+                    usr/lib/evolution/${PV_MAJ_MIN}/csv2vcard
+                    usr/lib/evolution/${PV_MAJ_MIN}/evolution-*
+                    usr/lib/evolution/${PV_MAJ_MIN}/killev.exe
+                    usr/lib/evolution/${PV_MAJ_MIN}/plugins/ usr/share/"
+evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/${PV_MAJ_MIN}/components/
+                          usr/lib/evolution/${PV_MAJ_MIN}/lib*
+                          usr/lib/pkgconfig/ usr/share/idl/"
+
+# nss/smime: nspr/nss are still broken, sorry no SSL :-(
+# pst-import: not compatible with current libpst
+CYGCONF_ARGS="
+	--enable-plugins=experimental
+	--disable-nss --disable-smime
+	--disable-pst-import
+"
+
+src_install() {
+	local privlibdir=/usr/lib/evolution
+
+	cd ${B}
+	cyginstall
+
+	mv ${D}${privlibdir}/bin/* ${D}/usr/bin/
+	sed -i -e '/^dlname=/ s|\.\./bin|../../../bin|' ${D}${privlibdir}/${PV_MAJ_MIN}/*.la
+
+	# some libraries and many plugins link against the components,
+	# so we move them to /usr/bin to be in $PATH
+	mv ${D}${privlibdir}/${PV_MAJ_MIN}/components/*.dll ${D}/usr/bin/
+	sed -e '/^dlname=/ s|cyg|../../../../bin/cyg|' \
+		-e '/^shouldnotlink=/ s|=yes|=no|' \
+		-i ${D}${privlibdir}/${PV_MAJ_MIN}/components/*.la
+	sed -e "/location=/ s|${privlibdir}/${PV_MAJ_MIN}/components/|/usr/bin/|g" \
+		-i ${D}/usr/lib/bonobo/servers/*
+}
