@@ -1,4 +1,4 @@
-e	--- origsrc/evolution-2.26.2/addressbook/gui/component/GNOME_Evolution_Addressbook.server.in.in	2009-05-03 09:55:30.000000000 -0500
+--- origsrc/evolution-2.26.2/addressbook/gui/component/GNOME_Evolution_Addressbook.server.in.in	2009-05-03 09:55:30.000000000 -0500
 +++ src/evolution-2.26.2/addressbook/gui/component/GNOME_Evolution_Addressbook.server.in.in	2009-06-16 19:29:43.799712600 -0500
 @@ -2,7 +2,7 @@
  

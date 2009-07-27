@@ -32,11 +32,15 @@ CYGCONF_ARGS="
 src_install() {
 	local privlibdir=/usr/lib/evolution
 
+	# interdependent libraries are so much fun
+	find ${B} -type f -exec touch -t $(date +%Y%m%d%H%M.%S) '{}' +
+
 	cd ${B}
 	cyginstall
 
 	mv ${D}${privlibdir}/bin/* ${D}/usr/bin/
-	sed -i -e '/^dlname=/ s|\.\./bin|../../../bin|' ${D}${privlibdir}/${PV_MAJ_MIN}/*.la
+	sed -e '/^dlname=/ s|\.\./bin|../../../bin|' \
+		-i ${D}${privlibdir}/${PV_MAJ_MIN}/*.la
 
 	# some libraries and many plugins link against the components,
 	# so we move them to /usr/bin to be in $PATH
