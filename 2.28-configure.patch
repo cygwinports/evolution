@@ -1,0 +1,48 @@
+--- origsrc/evolution-2.28.1/configure.ac	2009-10-17 21:22:08.000000000 -0500
++++ src/evolution-2.28.1/configure.ac	2009-11-02 20:14:45.738328500 -0600
+@@ -172,9 +172,23 @@ PKG_PROG_PKG_CONFIG
+ dnl Win32
+ AC_MSG_CHECKING([for Win32])
+ case "$host" in
++*-cygwin*)
++	platform_win32=yes
++	os_win32=no
++	NO_UNDEFINED='-no-undefined'
++	SOPFX='cyg'
++	SOEXT='.dll'
++	SA_JUNK_PLUGIN=sa-junk-plugin
++	BF_JUNK_PLUGIN=bogo-junk-plugin
++	DL_LIB=''
++	SOFTOKN3_LIB=''
++	HAL_REQUIREMENT=''
++	;;
+ *-mingw*)
++	platform_win32=yes
+ 	os_win32=yes
+ 	NO_UNDEFINED='-no-undefined'
++	SOPFX='lib'
+ 	SOEXT='.dll'
+ 	SA_JUNK_PLUGIN=''
+ 	BF_JUNK_PLUGIN=''
+@@ -183,8 +197,10 @@ case "$host" in
+ 	HAL_REQUIREMENT=''
+ 	;;
+ *)
++	platform_win32=no
+ 	os_win32=no
+ 	NO_UNDEFINED=''
++	SOPFX='lib'
+ 	SOEXT='.so'
+ 	SA_JUNK_PLUGIN=sa-junk-plugin
+ 	BF_JUNK_PLUGIN=bogo-junk-plugin
+@@ -194,8 +210,10 @@ case "$host" in
+ 	;;
+ esac
+ AC_MSG_RESULT([$os_win32])
++AM_CONDITIONAL(PLATFORM_WIN32, [test $platform_win32 = yes])
+ AM_CONDITIONAL(OS_WIN32, [test $os_win32 = yes])
+ AC_SUBST(NO_UNDEFINED)
++AC_SUBST(SOPFX)
+ AC_SUBST(SOEXT)
+ 
+ if test "$os_win32" = "yes"; then

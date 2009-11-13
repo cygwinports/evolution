@@ -1,0 +1,12 @@
+--- origsrc/evolution-2.28.1/m4/dolt.m4	2009-10-17 18:08:48.000000000 -0500
++++ src/evolution-2.28.1/m4/dolt.m4	2009-11-02 20:15:29.279004400 -0600
+@@ -29,6 +29,9 @@ i?86-*-linux*|x86_64-*-linux*|powerpc-*-
+ i?86-apple-darwin*)
+     pic_options='-fno-common'
+     ;;
++i?86-pc-cygwin*)
++    pic_options='-DDLL_EXPORT'
++    ;;
+ *)
+     dolt_supported=no
+     ;;

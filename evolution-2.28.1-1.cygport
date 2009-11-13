@@ -4,10 +4,10 @@ DESCRIPTION="GNOME groupware suite"
 HOMEPAGE="http://projects.gnome.org/evolution/"
 
 PATCH_URI="
-	2.26-configure.patch
-	2.26-dolt.patch
-	2.26-library-prefix.patch
-	2.26-no-undefined.patch
+	2.28-configure.patch
+	2.28-dolt.patch
+	2.28-library-prefix.patch
+	2.28-no-undefined.patch
 "
 
 PKG_NAMES="${PN} ${PN}-devel"
@@ -22,11 +22,12 @@ evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/${PV_MAJ_MIN}/component
                           usr/lib/pkgconfig/ usr/share/idl/"
 
 # nss/smime: nspr/nss are still broken, sorry no SSL :-(
-# pst-import: not compatible with current libpst
 CYGCONF_ARGS="
 	--enable-plugins=experimental
+	--disable-nm
 	--disable-nss --disable-smime
-	--disable-pst-import
+	--enable-python
+	--with-krb5
 "
 
 src_install() {
