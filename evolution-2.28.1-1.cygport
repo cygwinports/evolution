@@ -39,10 +39,6 @@ src_install() {
 	cd ${B}
 	cyginstall
 
-	mv ${D}${privlibdir}/bin/* ${D}/usr/bin/
-	sed -e '/^dlname=/ s|\.\./bin|../../../bin|' \
-		-i ${D}${privlibdir}/${PV_MAJ_MIN}/*.la
-
 	# some libraries and many plugins link against the components,
 	# so we move them to /usr/bin to be in $PATH
 	mv ${D}${privlibdir}/${PV_MAJ_MIN}/components/*.dll ${D}/usr/bin/
