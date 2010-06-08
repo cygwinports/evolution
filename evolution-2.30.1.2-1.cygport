@@ -1,0 +1,33 @@
+inherit gnome2
+
+DESCRIPTION="GNOME groupware suite"
+HOMEPAGE="http://projects.gnome.org/evolution/"
+
+PATCH_URI="2.30-cygwin.patch"
+
+PKG_NAMES="${PN} ${PN}-devel"
+PKG_HINTS="setup devel"
+evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/csv2vcard
+                    usr/lib/evolution/*/evolution-* usr/lib/evolution/*/killev.exe
+                    usr/lib/evolution/*/*/ usr/share/"
+evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/*/lib*
+                          usr/lib/pkgconfig/ usr/share/gtk-doc/"
+
+CYGCONF_ARGS="
+	--enable-plugins=experimental
+	--disable-nm
+	--enable-nss --enable-smime
+	--enable-python
+	--with-krb5
+	--with-nspr-includes=/usr/include/nspr
+	--with-nspr-libs=/usr/lib
+	--with-nss-includes=/usr/include/nss
+	--with-nss-libs=/usr/lib
+"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	sed -i -e 's|/liborg-|/cygorg-|g' $(find ${D}/ -name '*.eplug')
+}
