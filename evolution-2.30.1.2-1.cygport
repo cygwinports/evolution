@@ -15,8 +15,10 @@ evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/*/lib*
 
 CYGCONF_ARGS="
 	--enable-plugins=experimental
+	--disable-mono
 	--disable-nm
 	--enable-nss --enable-smime
+	--disable-pilot-conduits
 	--enable-python
 	--with-krb5
 	--with-nspr-includes=/usr/include/nspr
@@ -24,10 +26,3 @@ CYGCONF_ARGS="
 	--with-nss-includes=/usr/include/nss
 	--with-nss-libs=/usr/lib
 "
-
-src_install() {
-	cd ${B}
-	cyginstall
-
-	sed -i -e 's|/liborg-|/cygorg-|g' $(find ${D}/ -name '*.eplug')
-}
