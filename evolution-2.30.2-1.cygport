@@ -15,11 +15,9 @@ evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/*/lib*
 
 CYGCONF_ARGS="
 	--enable-plugins=experimental
-	--disable-mono
 	--disable-nm
 	--enable-nss --enable-smime
 	--disable-pilot-conduits
-	--enable-python
 	--with-krb5
 	--with-nspr-includes=/usr/include/nspr
 	--with-nspr-libs=/usr/lib
