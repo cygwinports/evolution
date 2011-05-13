@@ -1,5 +1,5 @@
 category: Gnome Mail
-requires: evolution libatk1.0-devel libcairo-devel libcamel1.2-devel libcanberra-devel libcanberra-gtk-devel libebook1.2-devel libecal1.2-devel libedataserver1.2-devel libedataserverui1.2-devel libgailutil-devel libgconf2-devel libgdk_pixbuf2.0-devel libglib2.0-devel libgnome-desktop2-devel libgtk2.0-devel libgtkhtml3.14-devel libical-devel libICE-devel gettext libnspr-devel libnss-devel libpango1.0-devel libSM-devel libsoup2.4-devel libunique1.0-devel libxml2-devel
+requires: evolution libatk1.0-devel libcairo-devel libcanberra-devel libcanberra-gtk3-devel libedataserver1.2-devel libedataserverui3.0-devel libgailutil3-devel libgconf2-devel libgdk_pixbuf2.0-devel libglib2.0-devel libgnome-desktop3-devel libgtk3-devel libgtkhtml4.0-devel libical-devel libICE-devel gettext libnspr-devel libnss-devel libpango1.0-devel libSM-devel libsoup2.4-devel libunique3.0-devel libxml2-devel
 external-source: evolution
 sdesc: "GNOME groupware suite (plugin development)"
 ldesc: "Evolution provides integrated mail, addressbook and calendaring 

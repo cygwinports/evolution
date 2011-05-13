@@ -3,7 +3,7 @@ inherit gnome2
 DESCRIPTION="GNOME groupware suite"
 HOMEPAGE="http://projects.gnome.org/evolution/"
 
-PATCH_URI="2.32-cygwin.patch"
+PATCH_URI="3.0.0-cygwin.patch"
 
 PKG_NAMES="${PN} ${PN}-devel"
 PKG_HINTS="setup devel"
@@ -16,7 +16,7 @@ evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/*/lib*
 DIFF_EXCLUDES="*.pc *.desktop.in"
 
 CYGCONF_ARGS="
-	--enable-plugins=experimental
+	--disable-image-inline
 	--disable-nm
 	--enable-nss --enable-smime
 	--with-krb5

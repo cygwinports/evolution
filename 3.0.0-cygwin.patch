@@ -1,6 +1,6 @@
---- origsrc/evolution-2.32.1/configure.ac	2010-11-02 00:23:52.000000000 -0500
-+++ src/evolution-2.32.1/configure.ac	2010-12-16 02:19:25.870652300 -0600
-@@ -259,9 +259,20 @@ dnl Win32
+--- origsrc/evolution-3.0.0/configure.ac
++++ src/evolution-3.0.0/configure.ac
+@@ -190,9 +190,20 @@ dnl Win32
  dnl ******************************
  AC_MSG_CHECKING([for Win32])
  case "$host" in
@@ -21,7 +21,7 @@
  	SOEXT='.dll'
  	SA_JUNK_PLUGIN=''
  	BF_JUNK_PLUGIN=''
-@@ -273,6 +284,7 @@ case "$host" in
+@@ -204,6 +215,7 @@ case "$host" in
  *)
  	os_win32=no
  	NO_UNDEFINED='-no-undefined'
@@ -29,7 +29,7 @@
  	SOEXT='.so'
  	SA_JUNK_PLUGIN=sa-junk-plugin
  	BF_JUNK_PLUGIN=bogo-junk-plugin
-@@ -283,6 +295,7 @@ esac
+@@ -214,6 +226,7 @@ esac
  AC_MSG_RESULT([$os_win32])
  AM_CONDITIONAL(OS_WIN32, [test $os_win32 = yes])
  AC_SUBST(NO_UNDEFINED)
@@ -79,17 +79,17 @@
      _name="Inline Audio"
      system_plugin="true">
  
---- origsrc/evolution-2.32.1/plugins/backup-restore/org-gnome-backup-restore.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/backup-restore/org-gnome-backup-restore.eplug.xml	2010-12-16 02:19:25.895653700 -0600
+--- origsrc/evolution-3.0.0/plugins/backup-restore/org-gnome-backup-restore.eplug.xml
++++ src/evolution-3.0.0/plugins/backup-restore/org-gnome-backup-restore.eplug.xml
 @@ -4,7 +4,7 @@
    <e-plugin
      id="org.gnome.plugin.backup.restore"
      type="shlib"
 -    location="@PLUGINDIR@/liborg-gnome-backup-restore@SOEXT@"
 +    location="@PLUGINDIR@/@SOPFX@org-gnome-backup-restore@SOEXT@"
-     _name="Backup and Restore">
+     _name="Back up and Restore">
      <author name="JP Rosevear" email="jpr@novell.com"/>
-     <_description>Backup and restore your Evolution data and settings.</_description>
+     <_description>Back up and restore your Evolution data and settings.</_description>
 --- origsrc/evolution-2.32.1/plugins/bbdb/org-gnome-evolution-bbdb.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/bbdb/org-gnome-evolution-bbdb.eplug.xml	2010-12-16 02:19:25.899653900 -0600
 @@ -3,7 +3,7 @@
@@ -319,17 +319,6 @@
      <author name="Chenthill Palanisamy" email="pchenthill@novell.com"/>
      <_description>Mark all messages in a folder as read.</_description>
  
---- origsrc/evolution-2.32.1/plugins/plugin-manager/org-gnome-plugin-manager.eplug.xml	2010-09-21 02:26:33.000000000 -0500
-+++ src/evolution-2.32.1/plugins/plugin-manager/org-gnome-plugin-manager.eplug.xml	2010-12-16 02:19:28.572280500 -0600
-@@ -3,7 +3,7 @@
-   <e-plugin
-     type="shlib"
-     id="org.gnome.evolution.plugin.manager"
--    location="@PLUGINDIR@/liborg-gnome-plugin-manager@SOEXT@"
-+    location="@PLUGINDIR@/@SOPFX@org-gnome-plugin-manager@SOEXT@"
-     _name="Plugin Manager"
-     system_plugin="true">
-     <author name="Michael Zucchi" email="notzed@ximian.com"/>
 --- origsrc/evolution-2.32.1/plugins/prefer-plain/org-gnome-prefer-plain.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/prefer-plain/org-gnome-prefer-plain.eplug.xml	2010-12-16 02:19:28.572280500 -0600
 @@ -3,7 +3,7 @@
@@ -395,17 +384,6 @@
      <author name="Rodrigo Moya" email="rodrigo@novell.com"/>
      <_description>Save a calendar or task list to disk.</_description>
  
---- origsrc/evolution-2.32.1/plugins/subject-thread/org-gnome-subject-thread.eplug.xml	2010-09-21 02:26:33.000000000 -0500
-+++ src/evolution-2.32.1/plugins/subject-thread/org-gnome-subject-thread.eplug.xml	2010-12-16 02:19:29.617482300 -0600
-@@ -1,7 +1,7 @@
- <?xml version="1.0"?>
- <e-plugin-list>
- 	<e-plugin id="org.gnome.evolution.mail_subject_thread" type="shlib" _name="Subject Threading" 
--		location="@PLUGINDIR@/liborg-gnome-subject-thread@SOEXT@">
-+		location="@PLUGINDIR@/@SOPFX@org-gnome-subject-thread@SOEXT@">
- 		<author name="JP Rosevear" email="jpr@novell.com"/>
- 		<_description>Sort mail message threads by subject.</_description>
- 	
 --- origsrc/evolution-2.32.1/plugins/templates/org-gnome-templates.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/templates/org-gnome-templates.eplug.xml	2010-12-16 02:19:29.617482300 -0600
 @@ -3,7 +3,7 @@
