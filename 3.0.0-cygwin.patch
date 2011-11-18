@@ -1,6 +1,6 @@
 --- origsrc/evolution-3.0.0/configure.ac
 +++ src/evolution-3.0.0/configure.ac
-@@ -190,9 +190,20 @@ dnl Win32
+@@ -190,9 +190,18 @@ dnl Win32
  dnl ******************************
  AC_MSG_CHECKING([for Win32])
  case "$host" in
@@ -9,8 +9,6 @@
 +	NO_UNDEFINED='-no-undefined'
 +	SOPFX='cyg'
 +	SOEXT='.dll'
-+	SA_JUNK_PLUGIN=sa-junk-plugin
-+	BF_JUNK_PLUGIN=bogo-junk-plugin
 +	DL_LIB=''
 +	SOFTOKN3_LIB=''
 +	;;
@@ -19,16 +17,16 @@
  	NO_UNDEFINED='-no-undefined'
 +	SOPFX='lib'
  	SOEXT='.dll'
- 	SA_JUNK_PLUGIN=''
- 	BF_JUNK_PLUGIN=''
+ 	DL_LIB=''
+ 	SOFTOKN3_LIB=''
 @@ -204,6 +215,7 @@ case "$host" in
  *)
  	os_win32=no
  	NO_UNDEFINED='-no-undefined'
 +	SOPFX='lib'
  	SOEXT='.so'
- 	SA_JUNK_PLUGIN=sa-junk-plugin
- 	BF_JUNK_PLUGIN=bogo-junk-plugin
+ 	DL_LIB='-ldl'
+ 	SOFTOKN3_LIB='-lsoftokn3'
 @@ -214,6 +226,7 @@ esac
  AC_MSG_RESULT([$os_win32])
  AM_CONDITIONAL(OS_WIN32, [test $os_win32 = yes])
@@ -101,17 +99,6 @@
  
  	  	<_description xml:space="preserve">Takes the gruntwork out of managing your address book.
  
---- origsrc/evolution-2.32.1/plugins/bogo-junk-plugin/org-gnome-bogo-junk-plugin.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/bogo-junk-plugin/org-gnome-bogo-junk-plugin.eplug.xml	2010-12-16 02:19:25.904654200 -0600
-@@ -1,7 +1,7 @@
- <?xml version="1.0" encoding="UTF-8"?>
- <e-plugin-list>
- 	<e-plugin type="shlib"
--	          location="@PLUGINDIR@/liborg-gnome-bogo-junk-plugin.so"
-+	          location="@PLUGINDIR@/@SOPFX@org-gnome-bogo-junk-plugin@SOEXT@"
- 	          id="org.gnome.evolution.bogo.bf_junk_plugin"
- 	          _name="Bogofilter Junk Filter">
- 		<_description>Filter junk messages using Bogofilter.</_description>
 --- origsrc/evolution-2.32.1/plugins/caldav/org-gnome-evolution-caldav.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/caldav/org-gnome-evolution-caldav.eplug.xml	2010-12-16 02:19:25.908654400 -0600
 @@ -3,7 +3,7 @@
@@ -156,17 +143,6 @@
       id="org.gnome.evolution.calendar.weather"
       _name="Weather Calendars"
       system_plugin="true">
---- origsrc/evolution-2.32.1/plugins/contacts-map/org-gnome-contacts-map.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/contacts-map/org-gnome-contacts-map.eplug.xml	2010-12-16 02:19:25.926655500 -0600
-@@ -1,7 +1,7 @@
- <?xml version="1.0"?>
- <e-plugin-list>
-     <e-plugin id="org.gnome.evolution.contacts_maps" type="shlib" _name="Map for contacts"
--        location="@PLUGINDIR@/liborg-gnome-contacts-map@SOEXT@">
-+        location="@PLUGINDIR@/@SOPFX@org-gnome-contacts-map@SOEXT@">
-         <author name="Cedric Bosdonnat" email="cedric.bosdonnat.ooo@free.fr"/>
-         <_description>Add a map showing the location of contacts when possible.</_description>
-       
 --- origsrc/evolution-2.32.1/plugins/dbx-import/org-gnome-dbx-import.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/dbx-import/org-gnome-dbx-import.eplug.xml	2010-12-16 02:20:12.677213000 -0600
 @@ -3,7 +3,7 @@
@@ -232,17 +208,6 @@
      <author name="Ebby Wiselyn" email="ebbywiselyn@gmail.com"/>
      <author name="Joergen Scheibengruber" email="joergen.scheibengruber@googlemail.com"/>
      <_description>Add Google Calendars to Evolution.</_description>
---- origsrc/evolution-2.32.1/plugins/groupwise-features/org-gnome-groupwise-features.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/groupwise-features/org-gnome-groupwise-features.eplug.xml	2010-12-16 02:19:27.714279000 -0600
-@@ -1,7 +1,7 @@
- <?xml version="1.0"?>
- <e-plugin-list>
- 	<e-plugin id="org.gnome.evolution.groupwise_features" type="shlib" _name="GroupWise Features" 
--		location="@PLUGINDIR@/liborg-gnome-groupwise-features@SOEXT@" load-on-startup="true" system_plugin="true">
-+		location="@PLUGINDIR@/@SOPFX@org-gnome-groupwise-features@SOEXT@" load-on-startup="true" system_plugin="true">
- 
- 		<author name="Sivaiah Nallagatla" email="snallagatla@novell.com" />
- 		<author name="Vivek Jain" email="jvivek@novell.com" />
 --- origsrc/evolution-2.32.1/plugins/image-inline/org-gnome-image-inline.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/image-inline/org-gnome-image-inline.eplug.xml	2010-12-16 02:19:28.541080400 -0600
 @@ -3,7 +3,7 @@
@@ -330,17 +295,6 @@
      _name="Prefer Plain Text">
  
  
---- origsrc/evolution-2.32.1/plugins/profiler/org-gnome-evolution-profiler.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/profiler/org-gnome-evolution-profiler.eplug.xml	2010-12-16 02:19:28.572280500 -0600
-@@ -3,7 +3,7 @@
- 	id="org.gnome.evolution.profiler" 
- 	type="shlib" 
- 	_name="Evolution Profiler" 
--	location="@PLUGINDIR@/liborg-gnome-evolution-profiler@SOEXT@">
-+	location="@PLUGINDIR@/@SOPFX@org-gnome-evolution-profiler@SOEXT@">
- 
- 		<_description>Profile data events in Evolution (for developers only).</_description>
- 		<author name="Michael Zucchi" email="notzed@novell.com"/>
 --- origsrc/evolution-2.32.1/plugins/pst-import/org-gnome-pst-import.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/pst-import/org-gnome-pst-import.eplug.xml	2010-12-16 02:19:28.587880500 -0600
 @@ -3,7 +3,7 @@
@@ -363,17 +317,6 @@
       id="org.gnome.evolution.calendar.publish"
       _name="Calendar Publishing">
          <_description>Publish calendars to the web.</_description>
---- origsrc/evolution-2.32.1/plugins/sa-junk-plugin/org-gnome-sa-junk-plugin.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/sa-junk-plugin/org-gnome-sa-junk-plugin.eplug.xml	2010-12-16 02:19:28.587880500 -0600
-@@ -2,7 +2,7 @@
- <e-plugin-list>
- 	<e-plugin id="org.gnome.evolution.sa_junk_plugin" 
- 		type="shlib" _name="SpamAssassin Junk Filter"
--		location="@PLUGINDIR@/liborg-gnome-sa-junk-plugin@SOEXT@">
-+		location="@PLUGINDIR@/@SOPFX@org-gnome-sa-junk-plugin@SOEXT@">
- 		<_description>Filter junk messages using SpamAssassin.</_description>
- 		<author name="Vivek Jain" email="jvivek@novell.com"/>
- 		<hook class="org.gnome.evolution.mail.junk:1.0">
 --- origsrc/evolution-2.32.1/plugins/save-calendar/org-gnome-save-calendar.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/save-calendar/org-gnome-save-calendar.eplug.xml	2010-12-16 02:19:28.603480500 -0600
 @@ -1,6 +1,6 @@
