@@ -1,0 +1,11 @@
+--- origsrc/evolution-3.2.3/plugins/pst-import/pst-importer.c	2011-11-04 10:57:44.000000000 -0500
++++ src/evolution-3.2.3/plugins/pst-import/pst-importer.c	2012-01-30 07:31:18.726855600 -0600
+@@ -2194,7 +2194,7 @@ pst_init (pst_file *pst,
+ 	DEBUG_REGISTER_CLOSE ();
+ #endif
+ 
+-	if (pst_open (pst, filename) < 0) {
++	if (pst_open (pst, filename, NULL) < 0) {
+ 		pst_error_msg ("Error opening PST file %s", filename);
+ 		return -1;
+ 	}
