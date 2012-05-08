@@ -1,5 +1,5 @@
 category: Gnome Mail
-requires: evolution-data-server GConf2 gstreamer0.10-plugins-base gstreamer0.10-plugins-gconf gstreamer0.10-plugins-good gstreamer0.10-plugins-oss libatk1.0_0 libcairo2 libcamel1.2_29 libcanberra-gtk3_0 libcanberra0 libebook1.2_12 libecal1.2_10 libedataserver1.2_15 libedataserverui3.0_1 libgailutil3_0 libgcc1 libgconf2_4 libgdata13 libgdk_pixbuf2.0_0 libglib2.0_0 libgnome-desktop3_2 libgoa1.0_0 libgstreamer0.10_0 libgtk3_0 libgtkhtml4.0_0 libgweather3_0 libical0 libICE6 libintl8 libnotify4 libnspr4 libnss3 libpango1.0_0 libpst4 libSM6 libsoup2.4_1 libxml2 procps
+requires: evolution-data-server GConf2 gstreamer0.10-plugins-base gstreamer0.10-plugins-gconf gstreamer0.10-plugins-good libatk1.0_0 libcairo2 libcamel1.2_33 libcanberra-gtk3_0 libcanberra0 libebook1.2_13 libecal1.2_11 libedataserver1.2_16 libedataserverui3.0_1 libgailutil3_0 libgcc1 libgconf2_4 libgdata13 libgdk_pixbuf2.0_0 libglib2.0_0 libgnome-desktop3_2 libgoa1.0_0 libgstreamer0.10_0 libgtk3_0 libgtkhtml4.0_0 libgweather3_0 libical0 libICE6 libintl8 libnotify4 libnspr4 libnss3 libpango1.0_0 libpst4 libSM6 libsoup2.4_1 libxml2 procps
 sdesc: "GNOME groupware suite"
 ldesc: "Evolution provides integrated mail, addressbook and calendaring 
 functionality to users of the GNOME desktop."

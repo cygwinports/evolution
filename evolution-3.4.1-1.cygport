@@ -3,9 +3,7 @@ inherit gnome2
 DESCRIPTION="GNOME groupware suite"
 HOMEPAGE="http://projects.gnome.org/evolution/"
 
-PATCH_URI="3.0.0-cygwin.patch
-           3.2.3-pst_open.patch
-           3.2.2-LC_ADDRESS.patch"
+PATCH_URI="3.0.0-cygwin.patch"
 
 PKG_NAMES="${PN} ${PN}-devel"
 PKG_HINTS="setup devel"
@@ -26,3 +24,5 @@ CYGCONF_ARGS="
 	--with-nss-includes=/usr/include/nss
 	--with-nss-libs=/usr/lib
 "
+
+KEEP_LA_FILES="none"
