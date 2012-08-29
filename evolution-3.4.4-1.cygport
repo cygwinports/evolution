@@ -1,12 +1,14 @@
 inherit gnome2
 
-DESCRIPTION="GNOME groupware suite"
+CATEGORY="Gnome Mail"
+SUMMARY="GNOME groupware suite"
+DESCRIPTION="Evolution provides integrated mail, addressbook and calendaring
+functionality to users of the GNOME desktop."
 HOMEPAGE="http://projects.gnome.org/evolution/"
 
 PATCH_URI="3.0.0-cygwin.patch"
 
 PKG_NAMES="${PN} ${PN}-devel"
-PKG_HINTS="setup devel"
 evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/csv2vcard
                     usr/lib/evolution/*/evolution-* usr/lib/evolution/*/killev.exe
                     usr/lib/evolution/*/*/ usr/share/"
