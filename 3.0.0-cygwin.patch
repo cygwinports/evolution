@@ -44,17 +44,6 @@
  	-e 's|\@SOEXT\@|$(SOEXT)|'			\
  	-e 's|\@GETTEXT_PACKAGE\@|$(GETTEXT_PACKAGE)|'	\
  	-e 's|\@LOCALEDIR\@|$(localedir)|' $< > $@
---- origsrc/evolution-2.32.1/plugins/addressbook-file/org-gnome-addressbook-file.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/addressbook-file/org-gnome-addressbook-file.eplug.xml	2010-12-16 02:19:25.881652900 -0600
-@@ -2,7 +2,7 @@
- <e-plugin-list>
-     <e-plugin
-      type="shlib"
--     location="@PLUGINDIR@/liborg-gnome-addressbook-file@SOEXT@"
-+     location="@PLUGINDIR@/@SOPFX@org-gnome-addressbook-file@SOEXT@"
-      id="org.gnome.evolution.addressbook.file"
-      _name="Local Address Books"
-      system_plugin="true">
 --- origsrc/evolution-2.32.1/plugins/attachment-reminder/org-gnome-evolution-attachment-reminder.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/attachment-reminder/org-gnome-evolution-attachment-reminder.eplug.xml	2010-12-16 02:19:25.886653200 -0600
 @@ -3,7 +3,7 @@
@@ -66,28 +55,6 @@
  
  	  	<_description>Reminds you when you forgot to add an attachment to a mail message.</_description>
  
---- origsrc/evolution-2.32.1/plugins/audio-inline/org-gnome-audio-inline.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/audio-inline/org-gnome-audio-inline.eplug.xml	2010-12-16 02:19:25.890653400 -0600
-@@ -3,7 +3,7 @@
-   <e-plugin
-     type="shlib"
-     id="org.gnome.evolution.plugin.audioInline"
--    location="@PLUGINDIR@/liborg-gnome-audio-inline@SOEXT@"
-+    location="@PLUGINDIR@/@SOPFX@org-gnome-audio-inline@SOEXT@"
-     _name="Inline Audio"
-     system_plugin="true">
- 
---- origsrc/evolution-3.0.0/plugins/backup-restore/org-gnome-backup-restore.eplug.xml
-+++ src/evolution-3.0.0/plugins/backup-restore/org-gnome-backup-restore.eplug.xml
-@@ -4,7 +4,7 @@
-   <e-plugin
-     id="org.gnome.plugin.backup.restore"
-     type="shlib"
--    location="@PLUGINDIR@/liborg-gnome-backup-restore@SOEXT@"
-+    location="@PLUGINDIR@/@SOPFX@org-gnome-backup-restore@SOEXT@"
-     _name="Back up and Restore">
-     <author name="JP Rosevear" email="jpr@novell.com"/>
-     <_description>Back up and restore your Evolution data and settings.</_description>
 --- origsrc/evolution-2.32.1/plugins/bbdb/org-gnome-evolution-bbdb.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/bbdb/org-gnome-evolution-bbdb.eplug.xml	2010-12-16 02:19:25.899653900 -0600
 @@ -3,7 +3,7 @@
@@ -99,50 +66,6 @@
  
  	  	<_description xml:space="preserve">Takes the gruntwork out of managing your address book.
  
---- origsrc/evolution-2.32.1/plugins/caldav/org-gnome-evolution-caldav.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/caldav/org-gnome-evolution-caldav.eplug.xml	2010-12-16 02:19:25.908654400 -0600
-@@ -3,7 +3,7 @@
- 	<e-plugin
- 	  type="shlib"
- 	  id="org.gnome.evolution.caldav"
--	  location="@PLUGINDIR@/liborg-gnome-evolution-caldav@SOEXT@"
-+	  location="@PLUGINDIR@/@SOPFX@org-gnome-evolution-caldav@SOEXT@"
- 	  load-on-startup="true"
- 	  domain="@GETTEXT_PACKAGE@"
- 	  localedir="@LOCALEDIR@"
---- origsrc/evolution-2.32.1/plugins/calendar-file/org-gnome-calendar-file.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/calendar-file/org-gnome-calendar-file.eplug.xml	2010-12-16 02:19:25.913654700 -0600
-@@ -2,7 +2,7 @@
- <e-plugin-list>
-     <e-plugin
-      type="shlib"
--     location="@PLUGINDIR@/liborg-gnome-calendar-file@SOEXT@"
-+     location="@PLUGINDIR@/@SOPFX@org-gnome-calendar-file@SOEXT@"
-      id="org.gnome.evolution.calendar.file"
-      _name="Local Calendars"
-      system_plugin="true">
---- origsrc/evolution-2.32.1/plugins/calendar-http/org-gnome-calendar-http.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/calendar-http/org-gnome-calendar-http.eplug.xml	2010-12-16 02:19:25.917655000 -0600
-@@ -2,7 +2,7 @@
- <e-plugin-list>
-     <e-plugin
-      type="shlib"
--     location="@PLUGINDIR@/liborg-gnome-calendar-http@SOEXT@"
-+     location="@PLUGINDIR@/@SOPFX@org-gnome-calendar-http@SOEXT@"
-      id="org.gnome.evolution.calendar.http"
-      _name="Web Calendars"
-      system_plugin="true">
---- origsrc/evolution-2.32.1/plugins/calendar-weather/org-gnome-calendar-weather.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/calendar-weather/org-gnome-calendar-weather.eplug.xml	2010-12-16 02:19:25.922655200 -0600
-@@ -2,7 +2,7 @@
- <e-plugin-list>
-     <e-plugin
-      type="shlib"
--     location="@PLUGINDIR@/liborg-gnome-calendar-weather@SOEXT@"
-+     location="@PLUGINDIR@/@SOPFX@org-gnome-calendar-weather@SOEXT@"
-      id="org.gnome.evolution.calendar.weather"
-      _name="Weather Calendars"
-      system_plugin="true">
 --- origsrc/evolution-2.32.1/plugins/dbx-import/org-gnome-dbx-import.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/dbx-import/org-gnome-dbx-import.eplug.xml	2010-12-16 02:20:12.677213000 -0600
 @@ -3,7 +3,7 @@
@@ -154,17 +77,6 @@
      _name="Outlook DBX import">
      <_description>Import Outlook Express messages from DBX file</_description>
      <author name="David Woodhouse" email="dwmw2@infradead.org"/>
---- origsrc/evolution-2.32.1/plugins/default-source/org-gnome-default-source.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/default-source/org-gnome-default-source.eplug.xml	2010-12-16 02:19:27.698679000 -0600
-@@ -2,7 +2,7 @@
- <e-plugin-list>
-     <e-plugin
-      type="shlib"
--     location="@PLUGINDIR@/liborg-gnome-default-source@SOEXT@"
-+     location="@PLUGINDIR@/@SOPFX@org-gnome-default-source@SOEXT@"
-      id="org.gnome.evolution.plugin.default-source"
-      _name="Default Sources">
-      <author name="Sivaiah Nallagatla" email="snallagatla@novell.com"/>
 --- origsrc/evolution-2.32.1/plugins/email-custom-header/org-gnome-email-custom-header.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/email-custom-header/org-gnome-email-custom-header.eplug.xml	2010-12-16 02:19:27.698679000 -0600
 @@ -1,7 +1,7 @@
@@ -197,17 +109,6 @@
  
      <author name="Sankar P" email="psankar@novell.com"/>
      <_description xml:space="preserve">Attach a small picture of your face to outgoing messages.</_description>
---- origsrc/evolution-2.32.1/plugins/google-account-setup/org-gnome-evolution-google.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/google-account-setup/org-gnome-evolution-google.eplug.xml	2010-12-16 02:19:27.714279000 -0600
-@@ -1,7 +1,7 @@
- <?xml version="1.0"?>
- <e-plugin-list>
-   <e-plugin id="org.gnome.evolution.google" type="shlib" _name="Google Calendars"
--    location="@PLUGINDIR@/liborg-gnome-evolution-google@SOEXT@" load-on-startup="false" localedir = "@LOCALEDIR@" system_plugin="true">
-+    location="@PLUGINDIR@/@SOPFX@org-gnome-evolution-google@SOEXT@" load-on-startup="false" localedir = "@LOCALEDIR@" system_plugin="true">
-     <author name="Ebby Wiselyn" email="ebbywiselyn@gmail.com"/>
-     <author name="Joergen Scheibengruber" email="joergen.scheibengruber@googlemail.com"/>
-     <_description>Add Google Calendars to Evolution.</_description>
 --- origsrc/evolution-2.32.1/plugins/image-inline/org-gnome-image-inline.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/image-inline/org-gnome-image-inline.eplug.xml	2010-12-16 02:19:28.541080400 -0600
 @@ -3,7 +3,7 @@
@@ -219,28 +120,6 @@
      _name="Inline Image"
      system_plugin="true">
  
---- origsrc/evolution-2.32.1/plugins/imap-features/org-gnome-imap-features.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/imap-features/org-gnome-imap-features.eplug.xml	2010-12-16 02:19:28.541080400 -0600
-@@ -1,7 +1,7 @@
- <?xml version="1.0"?>
- <e-plugin-list>
- 	<e-plugin id="org.gnome.evolution.imap_features" type="shlib" _name="IMAP Features" 
--		location="@PLUGINDIR@/liborg-gnome-imap-features@SOEXT@">
-+		location="@PLUGINDIR@/@SOPFX@org-gnome-imap-features@SOEXT@">
- 	    	<author name="Sankar P" email="psankar@novell.com"/>
- 
- 		<_description>Fine-tune your IMAP accounts.</_description>
---- origsrc/evolution-2.32.1/plugins/itip-formatter/org-gnome-itip-formatter.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/itip-formatter/org-gnome-itip-formatter.eplug.xml	2010-12-16 02:19:28.541080400 -0600
-@@ -2,7 +2,7 @@
- <e-plugin-list>
- 	<e-plugin id="org.gnome.evolution.itip_formatter" 
- 		type="shlib" _name="Itip Formatter"
--		location="@PLUGINDIR@/liborg-gnome-itip-formatter@SOEXT@">
-+		location="@PLUGINDIR@/@SOPFX@org-gnome-itip-formatter@SOEXT@">
- 		<_description>Display "text/calendar" MIME parts in mail messages.</_description>
- 		<author name="JP Rosevear" email="jpr@novell.com"/>
- 	
 --- origsrc/evolution-2.32.1/plugins/mailing-list-actions/org-gnome-mailing-list-actions.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/mailing-list-actions/org-gnome-mailing-list-actions.eplug.xml	2010-12-16 02:19:28.556680500 -0600
 @@ -4,7 +4,7 @@
@@ -283,17 +162,6 @@
 +        location="@PLUGINDIR@/@SOPFX@org-gnome-mark-all-read@SOEXT@">
      <author name="Chenthill Palanisamy" email="pchenthill@novell.com"/>
      <_description>Mark all messages in a folder as read.</_description>
- 
---- origsrc/evolution-2.32.1/plugins/prefer-plain/org-gnome-prefer-plain.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/prefer-plain/org-gnome-prefer-plain.eplug.xml	2010-12-16 02:19:28.572280500 -0600
-@@ -3,7 +3,7 @@
-   <e-plugin
-     type="shlib"
-     id="org.gnome.evolution.plugin.preferPlain"
--    location="@PLUGINDIR@/liborg-gnome-prefer-plain@SOEXT@"
-+    location="@PLUGINDIR@/@SOPFX@org-gnome-prefer-plain@SOEXT@"
-     _name="Prefer Plain Text">
- 
  
 --- origsrc/evolution-2.32.1/plugins/pst-import/org-gnome-pst-import.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/pst-import/org-gnome-pst-import.eplug.xml	2010-12-16 02:19:28.587880500 -0600
@@ -338,36 +206,3 @@
          _name="Templates">
          <_description>Drafts based template plugin</_description>
          <author name="Bharath Acharya" email="abharath@novell.com"/>
---- origsrc/evolution-2.32.1/plugins/tnef-attachments/org-gnome-tnef-attachments.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/tnef-attachments/org-gnome-tnef-attachments.eplug.xml	2010-12-16 02:19:29.617482300 -0600
-@@ -3,7 +3,7 @@
-   <e-plugin
-     type="shlib"
-     id="org.gnome.evolution.mail.tnefattachments"
--    location="@PLUGINDIR@/liborg-gnome-tnef-attachments@SOEXT@"
-+    location="@PLUGINDIR@/@SOPFX@org-gnome-tnef-attachments@SOEXT@"
-     _name="TNEF Decoder">
-     <_description>Decode TNEF (winmail.dat) attachments from Microsoft Outlook.</_description>
-     <author name="Lucky Wankhede" email="wlakke@novell.com"/>
---- origsrc/evolution-2.32.1/plugins/vcard-inline/org-gnome-vcard-inline.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/vcard-inline/org-gnome-vcard-inline.eplug.xml	2010-12-16 02:19:29.633082300 -0600
-@@ -3,7 +3,7 @@
-   <e-plugin
-     type="shlib"
-     id="org.gnome.evolution.plugin.vcardInline"
--    location="@PLUGINDIR@/liborg-gnome-vcard-inline@SOEXT@"
-+    location="@PLUGINDIR@/@SOPFX@org-gnome-vcard-inline@SOEXT@"
-     _name="Inline vCards"
-     system_plugin="true">
- 
---- origsrc/evolution-2.32.1/plugins/webdav-account-setup/org-gnome-evolution-webdav.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/webdav-account-setup/org-gnome-evolution-webdav.eplug.xml	2010-12-16 02:19:29.633082300 -0600
-@@ -3,7 +3,7 @@
- 	<e-plugin id="org.gnome.evolution.webdav"
- 	          type="shlib"
- 	          _name="WebDAV contacts"
--	          location="@PLUGINDIR@/liborg-gnome-evolution-webdav@SOEXT@"
-+	          location="@PLUGINDIR@/@SOPFX@org-gnome-evolution-webdav@SOEXT@"
- 	          load-on-startup="false"
- 	          localedir = "@LOCALEDIR@">
- 		<author name="Matthias Braun"

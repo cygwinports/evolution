@@ -1,6 +1,9 @@
 inherit gnome2
 
-CATEGORY="Gnome Mail"
+NAME="evolution"
+VERSION=3.6.2
+RELEASE=1
+CATEGORY="GNOME Mail"
 SUMMARY="GNOME groupware suite"
 DESCRIPTION="Evolution provides integrated mail, addressbook and calendaring
 functionality to users of the GNOME desktop."
@@ -27,4 +30,3 @@ CYGCONF_ARGS="
 	--with-nss-libs=/usr/lib
 "
 
-KEEP_LA_FILES="none"
