@@ -9,7 +9,10 @@ DESCRIPTION="Evolution provides integrated mail, addressbook and calendaring
 functionality to users of the GNOME desktop."
 HOMEPAGE="http://projects.gnome.org/evolution/"
 
-PATCH_URI="3.0.0-cygwin.patch"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/evolution.git/plain/evolution-3.6.2-rhbug875109.patch?h=f18
+	3.0.0-cygwin.patch
+"
 
 PKG_NAMES="${PN} ${PN}-devel"
 evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/csv2vcard
