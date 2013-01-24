@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="evolution"
-VERSION=3.6.2
+VERSION=3.6.3
 RELEASE=1
 CATEGORY="GNOME Mail"
 SUMMARY="GNOME groupware suite"
@@ -10,7 +10,6 @@ functionality to users of the GNOME desktop."
 HOMEPAGE="http://projects.gnome.org/evolution/"
 
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/evolution.git/plain/evolution-3.6.2-rhbug875109.patch?h=f18
 	3.0.0-cygwin.patch
 "
 
