@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="evolution"
-VERSION=3.6.4
+VERSION=3.8.4
 RELEASE=1
 CATEGORY="GNOME Mail"
 SUMMARY="GNOME groupware suite"
@@ -13,18 +13,20 @@ PATCH_URI="
 	3.0.0-cygwin.patch
 "
 
-PKG_NAMES="${PN} ${PN}-devel"
-evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/csv2vcard
-                    usr/lib/evolution/*/evolution-* usr/lib/evolution/*/killev.exe
-                    usr/lib/evolution/*/*/ usr/share/"
+PKG_NAMES="${NAME} ${NAME}-devel"
+evolution_REQUIRES="bogofilter highlight"
+evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/*/
+                    usr/libexec/ usr/share/"
 evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/*/lib*
                           usr/lib/pkgconfig/ usr/share/gtk-doc/"
 
 DIFF_EXCLUDES="*.pc *.desktop.in"
 
+# spamassassin: requires perl-Mail-SpamAssassin (numerous prereqs)
 CYGCONF_ARGS="
 	--disable-nm
 	--enable-nss --enable-smime
+	--disable-spamassassin
 	--with-krb5
 	--with-nspr-includes=/usr/include/nspr
 	--with-nspr-libs=/usr/lib
