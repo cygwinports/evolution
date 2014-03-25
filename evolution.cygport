@@ -2,7 +2,7 @@ inherit gnome2
 
 NAME="evolution"
 VERSION=3.8.5
-RELEASE=1
+RELEASE=2
 CATEGORY="GNOME Mail"
 SUMMARY="GNOME groupware suite"
 DESCRIPTION="Evolution provides integrated mail, addressbook and calendaring
