@@ -152,17 +152,6 @@
      <author name="Rodrigo Moya" email="rodrigo@novell.com"/>
      <_description>Convert a mail message to a task.</_description>
  
---- origsrc/evolution-2.32.1/plugins/mark-all-read/org-gnome-mark-all-read.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/mark-all-read/org-gnome-mark-all-read.eplug.xml	2010-12-16 02:19:28.572280500 -0600
-@@ -4,7 +4,7 @@
-         type="shlib"
-         domain="@GETTEXT_PACKAGE@"
-         _name="Mark All Read"
--        location="@PLUGINDIR@/liborg-gnome-mark-all-read@SOEXT@">
-+        location="@PLUGINDIR@/@SOPFX@org-gnome-mark-all-read@SOEXT@">
-     <author name="Chenthill Palanisamy" email="pchenthill@novell.com"/>
-     <_description>Mark all messages in a folder as read.</_description>
- 
 --- origsrc/evolution-2.32.1/plugins/pst-import/org-gnome-pst-import.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/pst-import/org-gnome-pst-import.eplug.xml	2010-12-16 02:19:28.587880500 -0600
 @@ -3,7 +3,7 @@
@@ -204,5 +193,5 @@
 -        location="@PLUGINDIR@/liborg-gnome-templates@SOEXT@"
 +        location="@PLUGINDIR@/@SOPFX@org-gnome-templates@SOEXT@"
          _name="Templates">
-         <_description>Drafts based template plugin</_description>
-         <author name="Bharath Acharya" email="abharath@novell.com"/>
+         <_description>Drafts based template plugin.
+         

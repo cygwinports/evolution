@@ -1,8 +1,8 @@
 inherit gnome2
 
 NAME="evolution"
-VERSION=3.8.5
-RELEASE=2
+VERSION=3.10.4
+RELEASE=1
 CATEGORY="GNOME Mail"
 SUMMARY="GNOME groupware suite"
 DESCRIPTION="Evolution provides integrated mail, addressbook and calendaring
@@ -10,6 +10,9 @@ functionality to users of the GNOME desktop."
 HOMEPAGE="http://projects.gnome.org/evolution/"
 
 PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/evolution.git/plain/0001-Bug-724023-Run-EMailFormatter-in-the-main-UI-thread.patch?h=f20
+	http://pkgs.fedoraproject.org/cgit/evolution.git/plain/0002-Bug-722041-NNTP-Messages-are-silently-dropped-from-O.patch?h=f20
+	http://pkgs.fedoraproject.org/cgit/evolution.git/plain/0003-Bug-722698-Crash-creating-a-new-folder.patch?h=f20
 	3.0.0-cygwin.patch
 "
 
