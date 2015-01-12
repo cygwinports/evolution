@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="evolution"
-VERSION=3.10.4
+VERSION=3.12.10
 RELEASE=1
 CATEGORY="GNOME Mail"
 SUMMARY="GNOME groupware suite"
@@ -10,18 +10,17 @@ functionality to users of the GNOME desktop."
 HOMEPAGE="http://projects.gnome.org/evolution/"
 
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/evolution.git/plain/0001-Bug-724023-Run-EMailFormatter-in-the-main-UI-thread.patch?h=f20
-	http://pkgs.fedoraproject.org/cgit/evolution.git/plain/0002-Bug-722041-NNTP-Messages-are-silently-dropped-from-O.patch?h=f20
-	http://pkgs.fedoraproject.org/cgit/evolution.git/plain/0003-Bug-722698-Crash-creating-a-new-folder.patch?h=f20
 	3.0.0-cygwin.patch
 "
 
-PKG_NAMES="${NAME} ${NAME}-devel"
+PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
 evolution_REQUIRES="bogofilter gnome-control-center gvfs highlight"
 evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/*/
                     usr/libexec/ usr/share/"
-evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/*/lib*
-                          usr/lib/pkgconfig/ usr/share/gtk-doc/"
+evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/*/lib* usr/lib/pkgconfig/"
+evolution_doc_CATEGORY="Doc"
+evolution_doc_SUMMARY="${SUMMARY} (API documentation)"
+evolution_doc_CONTENTS="usr/share/gtk-doc/html/evolution-*/"
 
 DIFF_EXCLUDES="*.pc *.desktop.in"
 
