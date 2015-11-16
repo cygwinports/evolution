@@ -1,0 +1,11 @@
+--- origsrc/evolution-3.12.11/modules/cal-config-weather/evolution-cal-config-weather.c	2014-03-24 04:25:23.000000000 -0500
++++ src/evolution-3.12.11/modules/cal-config-weather/evolution-cal-config-weather.c	2015-11-15 20:09:39.217394900 -0600
+@@ -21,7 +21,7 @@
+ #include <libebackend/libebackend.h>
+ 
+ #define GWEATHER_I_KNOW_THIS_IS_UNSTABLE
+-#include <libgweather/location-entry.h>
++#include <libgweather/gweather.h>
+ #undef GWEATHER_I_KNOW_THIS_IS_UNSTABLE
+ 
+ #include <e-util/e-util.h>
