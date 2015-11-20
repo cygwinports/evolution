@@ -109,17 +109,6 @@
  
      <author name="Sankar P" email="psankar@novell.com"/>
      <_description xml:space="preserve">Attach a small picture of your face to outgoing messages.</_description>
---- origsrc/evolution-2.32.1/plugins/image-inline/org-gnome-image-inline.eplug.xml	2010-09-21 02:26:29.000000000 -0500
-+++ src/evolution-2.32.1/plugins/image-inline/org-gnome-image-inline.eplug.xml	2010-12-16 02:19:28.541080400 -0600
-@@ -3,7 +3,7 @@
-   <e-plugin
-     type="shlib"
-     id="org.gnome.evolution.plugin.imageInline"
--    location="@PLUGINDIR@/liborg-gnome-image-inline@SOEXT@"
-+    location="@PLUGINDIR@/@SOPFX@org-gnome-image-inline@SOEXT@"
-     _name="Inline Image"
-     system_plugin="true">
- 
 --- origsrc/evolution-2.32.1/plugins/mailing-list-actions/org-gnome-mailing-list-actions.eplug.xml	2010-09-21 02:26:29.000000000 -0500
 +++ src/evolution-2.32.1/plugins/mailing-list-actions/org-gnome-mailing-list-actions.eplug.xml	2010-12-16 02:19:28.556680500 -0600
 @@ -4,7 +4,7 @@

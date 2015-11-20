@@ -1,8 +1,8 @@
 inherit gnome2
 
 NAME="evolution"
-VERSION=3.12.11
-RELEASE=2
+VERSION=3.18.2
+RELEASE=1
 CATEGORY="GNOME Mail"
 SUMMARY="GNOME groupware suite"
 DESCRIPTION="Evolution provides integrated mail, addressbook and calendaring
@@ -11,14 +11,14 @@ HOMEPAGE="http://projects.gnome.org/evolution/"
 
 PATCH_URI="
 	3.0.0-cygwin.patch
-	3.12.11-libgweather318.patch
+	3.18.2-webkit-dep.patch
 "
 
 PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
 evolution_REQUIRES="bogofilter gnome-control-center gvfs highlight"
-evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/*/
+evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/
                     usr/libexec/ usr/share/"
-evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/*/lib* usr/lib/pkgconfig/"
+evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/lib* usr/lib/pkgconfig/"
 evolution_doc_CATEGORY="Doc"
 evolution_doc_SUMMARY="${SUMMARY} (API documentation)"
 evolution_doc_CONTENTS="usr/share/gtk-doc/html/evolution-*/"
@@ -27,6 +27,7 @@ DIFF_EXCLUDES="*.pc *.desktop.in"
 
 # spamassassin: requires perl-Mail-SpamAssassin (numerous prereqs)
 CYGCONF_ARGS="
+	--disable-autoar
 	--disable-nm
 	--enable-nss --enable-smime
 	--disable-spamassassin

@@ -1,0 +1,11 @@
+--- origsrc/evolution-3.18.2/configure.ac	2015-11-19 17:42:35.266244400 -0600
++++ src/evolution-3.18.2/configure.ac	2015-11-20 09:23:05.600986800 -0600
+@@ -50,7 +50,7 @@ m4_define([gcr_minimum_version], [3.4])
+ m4_define([enchant_minimum_version], [1.1.7])
+ m4_define([gnome_desktop_minimum_version], [2.91.3])
+ m4_define([gsettings_desktop_schemas_minimum_version], [2.91.92])
+-m4_define([webkitgtk_minimum_version], [2.2.0])
++m4_define([webkitgtk_minimum_version], [2.0.4])
+ m4_define([libxml_minimum_version], [2.7.3])
+ m4_define([shared_mime_info_minimum_version], [0.22])
+ m4_define([libpst_minimum_version], [0.6.54])
