@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="evolution"
-VERSION=3.18.3
+VERSION=3.18.5.2
 RELEASE=1
 CATEGORY="GNOME Mail"
 SUMMARY="GNOME groupware suite"
@@ -12,10 +12,11 @@ HOMEPAGE="http://projects.gnome.org/evolution/"
 PATCH_URI="
 	3.0.0-cygwin.patch
 	3.18.2-webkit-dep.patch
+	3.18.5-as-needed.patch
 "
 
 PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
-evolution_REQUIRES="bogofilter gnome-control-center gvfs highlight"
+evolution_REQUIRES="bogofilter gnome-control-center gvfs highlight psmisc"
 evolution_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/evolution/*/
                     usr/libexec/ usr/share/"
 evolution_devel_CONTENTS="usr/include/ usr/lib/evolution/lib* usr/lib/pkgconfig/"
@@ -36,5 +37,7 @@ CYGCONF_ARGS="
 	--with-nspr-libs=/usr/lib
 	--with-nss-includes=/usr/include/nss
 	--with-nss-libs=/usr/lib
+	--with-openldap=/usr
+	ac_cv_path_KILL_PROCESS_CMD=/usr/bin/killall
 "
 

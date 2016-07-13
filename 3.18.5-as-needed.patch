@@ -1,0 +1,27 @@
+--- origsrc/evolution-3.18.5.2/modules/addressbook/Makefile.am	2015-03-23 02:12:18.000000000 -0500
++++ src/evolution-3.18.5.2/modules/addressbook/Makefile.am	2016-05-30 17:57:45.265582200 -0500
+@@ -54,9 +54,7 @@ module_addressbook_la_LIBADD = \
+ 	$(SMIME_LIB)						\
+ 	$(top_builddir)/e-util/libevolution-util.la		\
+ 	$(top_builddir)/composer/libevolution-mail-composer.la	\
+-	$(top_builddir)/addressbook/printing/libecontactprint.la \
+ 	$(top_builddir)/shell/libevolution-shell.la		\
+-	$(top_builddir)/addressbook/gui/widgets/libeabwidgets.la \
+ 	$(top_builddir)/addressbook/util/libeabutil.la		\
+ 	$(top_builddir)/addressbook/gui/contact-editor/libecontacteditor.la \
+ 	$(top_builddir)/addressbook/gui/contact-list-editor/libecontactlisteditor.la \
+--- origsrc/evolution-3.18.5.2/modules/vcard-inline/Makefile.am	2015-03-23 02:12:18.000000000 -0500
++++ src/evolution-3.18.5.2/modules/vcard-inline/Makefile.am	2016-05-30 17:58:18.900853300 -0500
+@@ -23,11 +23,10 @@ module_vcard_inline_la_LIBADD =						\
+ 	$(top_builddir)/mail/libevolution-mail.la			\
+ 	$(top_builddir)/em-format/libevolution-mail-formatter.la	\
+ 	$(top_builddir)/addressbook/util/libeabutil.la			\
+-	$(top_builddir)/addressbook/gui/widgets/libeabwidgets.la	\
+-	$(top_builddir)/addressbook/printing/libecontactprint.la	\
+ 	$(EVOLUTION_DATA_SERVER_LIBS)					\
+ 	$(GNOME_PLATFORM_LIBS)						\
+ 	$(NULL)
++#	$(top_builddir)/addressbook/gui/contact-editor/libecontacteditor.la
+ 
+ module_vcard_inline_la_LDFLAGS =				\
+ 	-avoid-version -module $(NO_UNDEFINED) $(CODE_COVERAGE_LDFLAGS)
